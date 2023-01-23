@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+html{
+    font-size: 62.5%;
+    font-family: 'Oswald', sans-serif;
+}
+
+body{
+    background: hsla(148, 19%, 56%, 1);
+    background: radial-gradient(circle, hsla(148, 19%, 56%, 1) 0%, hsla(147, 14%, 30%, 1) 100%);
+    background: -moz-radial-gradient(circle, hsla(148, 19%, 56%, 1) 0%, hsla(147, 14%, 30%, 1) 100%);
+    background: -webkit-radial-gradient(circle, hsla(148, 19%, 56%, 1) 0%, hsla(147, 14%, 30%, 1) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button{
+    border: none;
+    background-color: transparent;
+    cursor:pointer;
+}
+
+.calculator{
+    min-width: 350px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 4.5rem;
+    background-color: rgb(54,54,54);
+    border-radius: 2rem;
+    .display{
+        height: 10rem;
+        padding: 2rem;
+        background-color: rgb(187, 209, 211);
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 5rem;
+        }
+    }
+    .container__buttons{
+        display: grid;
+        grid-template-columns: repeat(4, minmax(auto, 14rem));
+        grid-template-rows: repeat(5, 8rem);
+        .button__clear, .button__delete, .calculate{
+            background-color: rgb(66, 84, 102);
+            color: #fff;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .button__clear:hover, .button__delete:hover, .calculate:hover{
+            background-color: rgb(49, 61, 73);
+        }
+        .button__clear{
+            grid-column: span 2;
+        }
+        .calculate{
+            grid-column: 3/5;
+            grid-row: 5/6;
+            border-bottom-right-radius: 4px;
+        }
+
+    }
+}
